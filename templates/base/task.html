@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>{{task}}</h1>
+</div>
+<div class="card-body">
+    <ul>
+        <li><strong>Tarea: </strong>{{ task.title }}</li>
+        <li><strong>Descripción: </strong>{{ task.description }}</li>
+        <li><strong>Completa: </strong>{{ task.complete }}</li>
+    </ul>
+</div>
+{% endblock content %}

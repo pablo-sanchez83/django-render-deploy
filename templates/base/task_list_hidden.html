@@ -1,0 +1,4 @@
+<form style="display: none;" id="reorderForm" method="POST" action="{% url 'task-reorder' %}">
+    {% csrf_token %}
+    <input type="hidden" id="positionInput" name="reorder" />
+</form>

@@ -1,0 +1,21 @@
+{% for task in tasks %}
+<div>
+    <div>
+        {% if task.complete == True %}
+            <i><s><a href="{% url 'task-update' task.id %}">{{task.title}}</a></s></i>
+            {% elif task.complete == False %}
+            <a href="{% url 'task-update' task.id %}">{{task.title}}</a>
+            {% endif %}
+        </div>
+    <div>
+        <a href="{% url 'task-delete' task.id %}">&#215;</a>
+        <a href="{% url 'task-reorder' %}">&nbsp;&#10247;</a>
+    </div>
+</div>
+{% empty %}
+<div>
+    <h3>No hay tareas</h3>
+    <h3>Crea una <a href="{% url 'task-create' %}">Nueva tarea</a></h3>
+</div>
+
+{% endfor %}
